@@ -27,5 +27,7 @@ if(DEBUG){
 include CORE.'/common/function.php';
 include CORE.'/z_frame.php';
 
+spl_autoload_register('\core\z_frame::load');
+
 //启动框架
 \core\z_frame::run();
