@@ -13,7 +13,7 @@
 //定义函数库
 define('Z_FRAME',realpath(''));
 define('CORE',Z_FRAME.'/core');
-define('APP',Z_FRAME.'app');
+define('APP',Z_FRAME.'/app');
 
 define('DEBUG',true);
 

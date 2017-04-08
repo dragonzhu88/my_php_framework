@@ -38,8 +38,6 @@ class route
                 $this->action = 'index';
             }
 
-            p($pathArray);
-
             //url的多余部分，转换成参数
             $count = count($pathArray) + 2;
             $i = 2;
@@ -51,7 +49,6 @@ class route
 
                 $i += 2;
             }
-            p($param);
 
         } else {
             $this->controller = 'index';

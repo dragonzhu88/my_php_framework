@@ -13,9 +13,23 @@ class z_frame{
     public static $classMap = [];
 
     static public function run(){
-//        p('run');
+
         $route = new \core\lib\route();
-        p($route);
+        $controllerClass = $route->controller;
+        $action = $route->action;
+
+        $controllerFile = APP.'/controller/'.$controllerClass.'Controller.php';
+        $controllerClass = '\\app\controller\\'.$controllerClass.'Controller';
+
+        if(is_file($controllerFile)){
+            include $controllerFile;
+            $controller = new $controllerClass();
+            $controller->$action();
+
+        }else{
+            throw new \Exception('Can not find controller');
+        }
+
     }
 
     static public function load($class){
