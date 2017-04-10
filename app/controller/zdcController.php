@@ -12,6 +12,9 @@ namespace app\controller;
 class zdcController
 {
     public function testing(){
-        p('zdc');
+        $model = new \core\model\model();
+        $sql = 'SELECT * FROM user';
+        $ret = $model->query($sql);
+        p($ret->fetchAll());
     }
 }

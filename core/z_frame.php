@@ -11,10 +11,13 @@ namespace core;
 class z_frame{
 
     public static $classMap = [];
+    public $assign = [];
 
     static public function run(){
-
+        //加载路由
         $route = new \core\lib\route();
+
+        //加载控制器
         $controllerClass = $route->controller;
         $action = $route->action;
 
@@ -52,6 +55,18 @@ class z_frame{
             }
         }
 
+    }
+
+    public function assign($name,$data){
+        $this->assign[$name] = $data;
+    }
+
+    public function display($file){
+        $file = APP.'/views/'.$file;
+        if(is_file($file)){
+            extract($this->assign);
+            include $file;
+        }
     }
 
 }

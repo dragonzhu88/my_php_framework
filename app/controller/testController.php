@@ -8,10 +8,13 @@
  */
 namespace app\controller;
 
-class testController
+class testController extends \core\z_frame
 {
     public function index()
     {
-        p('test controller index action');
+       $data = 'hello';
+       $this->assign('data',$data);
+       $this->display('index.html');
+
     }
 }
