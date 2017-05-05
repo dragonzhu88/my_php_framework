@@ -46,7 +46,7 @@ class z_frame{
         }else{
             $class = str_replace('\\','/',$class);
             $file = Z_FRAME.'/'.$class.'.php';
-//            p($file);
+          // echo $file;
             if($file){
                 include $file;
                 self::$classMap[$class] = $class;

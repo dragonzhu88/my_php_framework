@@ -24,10 +24,15 @@ if(DEBUG){
 }
 
 //加载函数库
-include CORE.'/common/function.php';
+//include CORE.'/common/function.php';
 include CORE.'/z_frame.php';
-
 spl_autoload_register('\core\z_frame::load');
 
+$obj = \core\lib\Object::getInstance();
+$obj = \core\lib\Object::getInstance();
+$obj = \core\lib\Object::getInstance();
+
+
+
 //启动框架
-\core\z_frame::run();
+//\core\z_frame::run();
